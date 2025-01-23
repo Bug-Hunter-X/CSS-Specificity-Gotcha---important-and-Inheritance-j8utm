@@ -1,0 +1,21 @@
+To correct this behavior, we need to avoid relying on inheritance when using `!important` for nested elements. Instead, explicitly target the nested `<span>` element within the `.container div` with a more specific selector:
+
+```css
+div {
+  font-size: 16px;
+}
+
+.container div {
+  font-size: 18px;
+}
+
+.container p {
+  font-size: 20px;
+}
+
+.container div span {
+  font-size: 14px;
+}
+```
+
+This revised CSS ensures that the `font-size: 14px` is applied directly to the nested `<span>` element, resolving the unexpected behavior caused by inheritance.  The `!important` declaration is removed to promote more predictable and maintainable style rules.
